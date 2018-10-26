@@ -30,8 +30,8 @@ return [
     ],
     'cache_types' => [
         'config' => 1,
-        'layout' => 1,
-        'block_html' => 1,
+        'layout' => 0,
+        'block_html' => 0,
         'collections' => 1,
         'reflection' => 1,
         'db_ddl' => 1,
@@ -39,9 +39,10 @@ return [
         'customer_notification' => 1,
         'config_integration' => 1,
         'config_integration_api' => 1,
-        'full_page' => 1,
+        'full_page' => 0,
         'config_webservice' => 1,
-        'translate' => 1
+        'translate' => 1,
+        'compiled_config' => 1
     ],
     'install' => [
         'date' => 'Wed, 17 Oct 2018 19:06:26 +0000'
