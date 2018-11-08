@@ -1,0 +1,14 @@
+<?php
+/** @var \chaOS\LearnRoute\Block\CustomLayout $block*/
+?>
+
+<div class="learn-route-block">
+    <h3>Learn Route</h3>
+    <?php if ($block->getName()) : ?>
+        <p><?= $block->getName(); ?></p>
+    <?php endif; if ($block->getLastName()) : ?>
+        <p><?= $block->getLastName(); ?></p>
+    <?php endif; if ($block->getLinkToJson()) : ?>
+        <p><a href="<?= $block->getLinkToJson(); ?>">Link To JSON</a></p>
+    <?php endif; ?>
+</div>

@@ -1,0 +1,15 @@
+<page layout="1column"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!--chaOS\LearnRoute\Block\CustomLayout-->
+    <body>
+        <referenceContainer name="content">
+            <container name="chaos.learnroute.personalname.layout">
+                <block class="chaOS\LearnRoute\Block\CustomLayout"
+                       name="learnroute.block"
+                       as="learnroute.block"
+                       template="chaOS_LearnRoutes::homework.phtml" />
+            </container>
+        </referenceContainer>
+    </body>
+</page>
