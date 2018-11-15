@@ -5,10 +5,10 @@
     <body>
         <referenceContainer name="content">
             <container name="chaos.learnroute.personalname.layout">
-                <block class="chaOS\LearnRoute\Block\CustomLayout"
+                <block class="ChaOS\LearnRoute\Block\CustomLayout"
                        name="learnroute.block"
                        as="learnroute.block"
-                       template="chaOS_LearnRoutes::homework.phtml" />
+                       template="ChaOS_LearnRoutes::homework.phtml" />
             </container>
         </referenceContainer>
     </body>

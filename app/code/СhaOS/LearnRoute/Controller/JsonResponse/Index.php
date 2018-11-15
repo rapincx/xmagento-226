@@ -6,7 +6,7 @@
  * Time: 15:21
  */
 
-namespace chaOS\LearnRoute\Controller\JsonResponse;
+namespace ChaOS\LearnRoute\Controller\JsonResponse;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\ResponseInterface;
@@ -15,7 +15,7 @@ use Magento\Framework\Controller\Result\Json;
 
 /**
  * Class Index
- * @package chaOS\LearnRoute\Controller\JsonResponse
+ * @package ChaOS\LearnRoute\Controller\JsonResponse
  */
 class Index extends Action
 {

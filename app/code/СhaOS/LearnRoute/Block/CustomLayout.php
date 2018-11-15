@@ -6,7 +6,7 @@
  * Time: 15:17
  */
 
-namespace chaOS\LearnRoute\Block;
+namespace ChaOS\LearnRoute\Block;
 
 use Magento\Framework\View\Element\Template;
 

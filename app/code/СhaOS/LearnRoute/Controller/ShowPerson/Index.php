@@ -6,7 +6,7 @@
  * Time: 15:28
  */
 
-namespace chaOS\LearnRoute\Controller\ShowPerson;
+namespace ChaOS\LearnRoute\Controller\ShowPerson;
 
 use Magento\Framework\App\Action\Action;
 
