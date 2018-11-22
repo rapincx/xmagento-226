@@ -145,6 +145,7 @@ return [
         'Magento_WishlistSampleData' => 1,
         'ChaOS_LearnRoute' => 1,
         'ChaOS_ProductTab' => 1,
+        'ChaOS_LearnJsInit' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1
     ]
