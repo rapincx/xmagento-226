@@ -14,6 +14,6 @@ define(['jquery', 'Magento_Ui/js/modal/modal'], function ($, modal) {
     };
     var popup = modal(options, $('.registration-dealer-form-box'));
     $('.registration-dealer-button').on('click', function () {
-        popup.openModal();
+        popup.openModal().trigger('contentUpdated');
     });
 });
