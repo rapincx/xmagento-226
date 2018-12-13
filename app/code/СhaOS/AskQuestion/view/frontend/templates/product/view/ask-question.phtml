@@ -1,11 +1,11 @@
 <?php /** @var $block \Magento\Catalog\Block\Product\View */ ?>
 <section class="ask-question-tab">
     <h4><?= $block->escapeHtml(__('Ask Question')) ?></h4>
-    <form action="<? $block->escapeUrl($block->getUrl('request_sample/submit')) ?>"
+    <form action="<? $block->escapeUrl($block->getUrl('ask_question/submit')) ?>"
           id="ask-question"
           method="post"
           onsubmit="return false"
-          data-mage-init='{"askQuestion":{}, "phoneUkr":{}}'>
+          data-mage-init='{"askQuestion":{}'>
         <fieldset class="fieldset">
             <legend class="legend">
                 <span><?= $block->escapeHtml(__('Write Us Your Questions')) ?></span>
@@ -53,7 +53,7 @@
                            placeholder="<?= $block->escapeHtmlAttr(__('+380XXXXXXXXX')) ?>"
                            class="input-text mobileUkr"
                            type="text"
-                           data-validate="{'mobileUkr':true}">
+                           data-validate="{'mobileUKR':true, 'required':true}">
                 </div>
             </div>
             <div class="field comment required">
@@ -67,7 +67,8 @@
                                   placeholder="<?= $block->escapeHtmlAttr(__('Will you talk with us?')) ?>"
                                   class="input-text"
                                   cols="5" rows="3"
-                                  data-validate="{required:true}"></textarea>
+                                  data-validate="{required:true}">
+                        </textarea>
                 </div>
             </div>
         </fieldset>

@@ -5,19 +5,23 @@ define([
     'mage/translate'
 ], function ($) {
     'use strict';
-    return function () {
-        $.validator.addMethod(
-            'mobileUkr',
+
+    /**
+     * Adding new rule
+     */
+    return function (rules) {
+        rules['mobileUKR'] = {
 
             /**
              * @param {*|str} value
              * @param {*|obj} element
              * @returns {*|bool}
              */
-            function (value, element) {
+            handler: function (value, element) {
                 return this.optional(element) || /^\+380\d{9}$/.test(value);
             },
-            $.mage.__('Correct ukrainian mobile number without spaces please')
-        );
+            message: __('Phone cannot be blank.')
+        };
+        return rules;
     };
 });
