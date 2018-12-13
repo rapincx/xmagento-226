@@ -1,0 +1,18 @@
+<section id="ki" data-bind="scope: 'ko-intro'">
+    <h4>KnockOut Introduction</h4>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+    {
+        "#ki" : {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "ko-intro": {
+                        "component": "ChaOS_LearnKnockout/js/ko-intro",
+                        "template" : "ChaOS_LearnKnockout/ko-intro-template"
+                    }
+                }
+            }
+        }
+    }
+</script>
+</section>

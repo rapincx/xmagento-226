@@ -1,0 +1,16 @@
+<page layout="1column"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!--ChaOS\LearnRoute\Block\CustomLayout-->
+    <body>
+        <referenceContainer name="content">
+            <container name="chaos.learnknockout">
+                <block class="ChaOS\LearnKnockout\Block\KoIntro"
+                       name="chaos.learnknockout.hello.block"
+                       as="chaos.hello.block"
+                       cacheable="false"
+                       template="ChaOS_LearnKnockout::ko-intro.phtml" />
+            </container>
+        </referenceContainer>
+    </body>
+</page>
