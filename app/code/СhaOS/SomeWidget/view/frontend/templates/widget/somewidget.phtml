@@ -1,0 +1,18 @@
+<?php /** @var \ChaOS\SomeWidget\Block\Widget\SpecialLink $block */ ?>
+<div class="chaos-some-widget">
+    <?php if ($block->outputBlock()) : ?>
+        <div class="banner-box">
+            <?= $block->outputBlock(); ?>
+            <?php if ($block->getButtonTitle()) : ?>
+                <a class='action primary' href="<?= $block->getUrl('geekhub-cms'); ?>">
+                    <?= $block->getButtonTitle(); ?>
+                </a>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+    <?php if ($block->getBannerContent()) : ?>
+        <p class='some-widget-content'>
+            <?= $block->getBannerContent(); ?>
+        </p>
+    <?php endif; ?>
+</div>

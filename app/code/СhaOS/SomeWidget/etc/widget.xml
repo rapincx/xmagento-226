@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="ChaOS\SomeWidget\Block\Widget\SpecialLink"
+            id="chaos_somewidget">
+        <label>Banner Homepage</label>
+        <description>Chose your block and button title</description>
+        <parameters>
+            <parameter name="button_title" xsi:type="text"
+                       visible="true"
+                       sort_order="20"
+                       required="true">
+                <label translate="true">Button Title</label>
+            </parameter>
+            <parameter name="banner_content" xsi:type="text"
+                       sort_order="30"
+                       visible="true">
+                <label translate="true">Widget Content</label>
+            </parameter>
+            <parameter name="block_id" xsi:type="block"
+                       visible="true"
+                       required="true"
+                       sort_order="20">
+                <label translate="true">Banner Block</label>
+                <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Block...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
