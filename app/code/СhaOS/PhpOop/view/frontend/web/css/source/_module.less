@@ -1,0 +1,39 @@
+@section-header-color: #a9a9ff;
+@class-name-color: #4b3333;
+
+& when (@media-common = true) {
+  .section-header {
+    color: @section-header-color;
+  }
+
+  .class-name,
+  .file-name {
+    font-weight: bold;
+    color: @class-name-color;
+  }
+
+  dd,
+  .file-data {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+  }
+
+  .class-informant {
+    .methods-list {
+      dt,
+      dd {
+        display: inline-block;
+      }
+    }
+  }
+
+  .file-data {
+    display: block;
+  }
+
+  .reset-list {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+}

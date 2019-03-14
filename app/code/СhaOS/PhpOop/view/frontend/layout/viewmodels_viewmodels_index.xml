@@ -1,0 +1,28 @@
+<page layout="1column"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <!--ChaOS\LearnRoutes\Block\CustomLayout-->
+    <body>
+        <referenceContainer name="content">
+            <container name="chaos.phpoop.viewmodels.layout">
+                <block class="ChaOS\PhpOop\Block\ViewModels"
+                       name="viewmodels.block"
+                       as="viewmodels.block"
+                       template="ChaOS_PhpOop::viewmodels.phtml">
+                    <arguments>
+                        <argument name="view_model_classinformant" xsi:type="object">
+                            ChaOS\PhpOop\ViewModel\ClassInformant
+                        </argument>
+                        <argument name="view_model_filelist" xsi:type="object">
+                            ChaOS\PhpOop\ViewModel\FileList
+                        </argument>
+                        <argument name="view_model_dependencyinjection" xsi:type="object">
+                            ChaOS\PhpOop\ViewModel\DependencyInjection
+                        </argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>
