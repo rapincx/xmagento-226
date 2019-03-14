@@ -150,6 +150,7 @@ return [
         'ChaOS_SomeWidget' => 1,
         'ChaOS_EditProductForm' => 1,
         'ChaOS_PhpOop' => 1,
+        'ChaOS_Cli' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1
     ]

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <chaos_cron_options>
+            <general>
+                <enable>1</enable>
+            </general>
+            <cron>
+                <enable>1</enable>
+                <days>3</days>
+            </cron>
+        </chaos_cron_options>
+    </default>
+</config>
