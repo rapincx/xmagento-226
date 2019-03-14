@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="customer_question_notification"
+              label="Customer Question Notification"
+              file="customer-question-notification.html"
+              type="html"
+              module="ChaOS_AskQuestion"
+              area="frontend"/>
+    <template id="admin_question_notification"
+              label="Admin Question Notification"
+              file="admin-question-notification.html"
+              type="html"
+              module="ChaOS_AskQuestion"
+              area="frontend"/>
+</config>

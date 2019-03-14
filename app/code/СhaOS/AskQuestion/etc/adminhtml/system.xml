@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="geekhub" translate="label" sortOrder="10">
+            <label>GeekHub</label>
+        </tab>
+        <section id="chaos_crone_options" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Crone Job Management Options</label>
+            <tab>geekhub</tab>
+            <resource>ChaOS_AskQuestion::chaos_crone_options</resource>
+            <group id="general"
+                   translate="label"
+                   type="text"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+            </group>
+            <group id="cron"
+                   translate="label"
+                   sortOrder="15"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Cron Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable auto confirming</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="days" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Quantity of Days</label>
+                </field>
+            </group>
+            <group id="email"
+                   translate="label"
+                   sortOrder="15"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Email Configuration</label>
+                <field id="enable"
+                       translate="label"
+                       type="select"
+                       sortOrder="1"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1"
+                >
+                    <label>Enable email notification</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="admin_email"
+                       translate="label"
+                       type="text"
+                       sortOrder="1"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1"
+                >
+                    <label>Admin email address</label>
+                </field>
+            </group>
+            <group id="test"
+                   sortOrder="30"
+                   translate="label"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Test</label>
+                <field id="test_multiselect"
+                       translate="label"
+                       type="multiselect"
+                       sortOrder="15"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Test Multiselect</label>
+                    <source_model>ChaOS\AskQuestion\Model\Config\Source\Multiselect</source_model>
+                </field>
+                <field id="test_select"
+                       translate="label"
+                       type="select"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Test Select</label>
+                    <source_model>Magento\AdminNotification\Model\Config\Source\Frequency</source_model>
+                </field>
+                <field id="test_text"
+                       translate="label"
+                       type="text"
+                       sortOrder="1"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Test Text</label>
+                </field>
+                <field id="test_values"
+                       translate="label"
+                       sortOrder="20"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Additional Option Fields</label>
+                    <frontend_model>ChaOS\AskQuestion\Block\Adminhtml\Form\Field\AdditionalOptionField</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

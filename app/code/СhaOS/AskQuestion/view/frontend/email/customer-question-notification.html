@@ -1,0 +1,6 @@
+<!--@subject {{trans "Your question has been sent" store_name=$store.getFrontendName()}} @-->
+<!--@vars {} @-->
+{{template config_path="design/email/header_template"}}
+<p class="greeting">{{trans "Hello, %customer_name" customer_name=$name}}</p>
+<p>{{trans "We received your question about product %product_name" product_name=$product_name}}</p>
+{{template config_path="design/email/footer_template"}}
