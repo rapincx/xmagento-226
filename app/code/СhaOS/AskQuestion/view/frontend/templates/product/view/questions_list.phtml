@@ -1,0 +1,27 @@
+<?php
+/** @var \ChaOS\AskQuestion\Block\Questions $block */
+$questions = $block->getQuestions();
+$format = $block->getDateFormat() ?: \IntlDateFormatter::SHORT;
+if ($questions->count()) : ?>
+    <ol class="items review-items">
+        <?php foreach ($questions as $question) : ?>
+            <li class="item review-item">
+                <div class="review-title" itemprop="name"><?= $block->escapeHtml($question->getName()) ?></div>
+                <div class="review-content" itemprop="description">
+                    <?= nl2br($block->escapeHtml($question->getQuestion())) ?>
+                </div>
+                <div class="review-details">
+                    <p class="review-date">
+                        <span class="review-details-label"><?= $block->escapeHtml(__('Posted on')) ?></span>
+                        <time class="review-details-value"
+                              itemprop="datePublished"
+                              datetime="<?= $block->escapeHtmlAttr(
+                                  $block->formatDate($question->getCreatedAt(), $format)
+                              ) ?>"
+                        ><?= $block->escapeHtml($block->formatDate($question->getCreatedAt(), $format)) ?></time>
+                    </p>
+                </div>
+            </li>
+        <?php endforeach; ?>
+    </ol>
+<?php endif; ?>

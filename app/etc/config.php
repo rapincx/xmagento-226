@@ -149,6 +149,7 @@ return [
         'ChaOS_AskQuestion' => 1,
         'ChaOS_SomeWidget' => 1,
         'ChaOS_EditProductForm' => 1,
+        'ChaOS_PhpOop' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1
     ]

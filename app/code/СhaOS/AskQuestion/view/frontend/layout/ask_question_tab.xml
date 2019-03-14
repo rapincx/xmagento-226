@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View"
+                   name="askquestion.sample.tab"
+                   as="askquestion.sample.tab"
+                   template="ChaOS_AskQuestion::product/view/ask_question.phtml"
+                   group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Ask question</argument>
+                </arguments>
+                <block class="ChaOS\AskQuestion\Block\Questions"
+                       name="question.list"
+                       template="ChaOS_AskQuestion::product/view/questions_list.phtml"
+                >
+                    <arguments>
+                        <argument name="limit" xsi:type="number">5</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

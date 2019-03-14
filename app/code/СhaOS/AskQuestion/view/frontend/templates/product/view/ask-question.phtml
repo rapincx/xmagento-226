@@ -1,20 +1,24 @@
-<?php /** @var $block \Magento\Catalog\Block\Product\View */ ?>
+<?php
+/** @var $block \Magento\Catalog\Block\Product\View */
+$product = $block->getProduct();
+?>
 <section class="ask-question-tab">
     <h4><?= $block->escapeHtml(__('Ask Question')) ?></h4>
-    <form action="<? $block->escapeUrl($block->getUrl('request_sample/submit')) ?>"
+    <form action="<?= $block->escapeUrl($block->getUrl('ask_question/submit')) ?>"
           id="ask-question"
           method="post"
           onsubmit="return false"
-          data-mage-init='{"askQuestion":{}, "phoneUkr":{}}'>
+          data-mage-init='{"askquestion":{}}'
+    >
         <fieldset class="fieldset">
             <legend class="legend">
                 <span><?= $block->escapeHtml(__('Write Us Your Questions')) ?></span>
             </legend>
-            
+
             <div class="field note no-label">
-                <?= $block->escapeHtml(__('Please send information if you want to order product')) ?>
+                <?= $block->escapeHtml(__('Please send information if you want to order sample product')) ?>
             </div>
-            
+
             <div class="field name required">
                 <label class="label" for="name">
                     <span><?= $block->escapeHtml(__('Name')) ?></span>
@@ -25,7 +29,8 @@
                            title="<?= $block->escapeHtmlAttr(__('Name')) ?>"
                            placeholder="<?= $block->escapeHtmlAttr(__('Name')) ?>"
                            class="input-text" type="text"
-                           data-validate="{required:true}">
+                           data-validate="{required:true}"
+                    />
                 </div>
             </div>
             <div class="field email required">
@@ -39,7 +44,8 @@
                            placeholder="<?= $block->escapeHtmlAttr(__('Email')) ?>"
                            class="input-text"
                            type="email"
-                           data-validate="{required:true}">
+                           data-validate="{required:true}"
+                    />
                 </div>
             </div>
             <div class="field telephone required">
@@ -50,34 +56,45 @@
                     <input name="phone"
                            id="phone"
                            title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>"
-                           placeholder="<?= $block->escapeHtmlAttr(__('+380XXXXXXXXX')) ?>"
-                           class="input-text mobileUkr"
+                           placeholder="<?= $block->escapeHtmlAttr(__('+380...')) ?>"
+                           class="input-text mobileUKR"
                            type="text"
-                           data-validate="{'mobileUkr':true}">
+                           data-validate="{'mobileUKR':true, 'required':true}"
+                    />
                 </div>
             </div>
             <div class="field comment required">
-                <label class="label" for="comment">
+                <label class="label" for="question">
                     <span><?= $block->escapeHtml(__('Will you talk with us?')) ?></span>
                 </label>
                 <div class="control">
-                        <textarea name="comment"
-                                  id="comment"
+                        <textarea name="question"
+                                  id="question"
                                   title="<?= $block->escapeHtmlAttr(__('Will you talk with us?')) ?>"
                                   placeholder="<?= $block->escapeHtmlAttr(__('Will you talk with us?')) ?>"
                                   class="input-text"
                                   cols="5" rows="3"
-                                  data-validate="{required:true}"></textarea>
+                                  data-validate="{required:true}"
+                        ></textarea>
                 </div>
             </div>
         </fieldset>
         <div class="actions-toolbar">
             <div class="primary">
-                <input type="hidden" name="hide-it" id="hide-it" value=""/>
+                <input type="hidden"
+                       name="sku"
+                       value="<?= $block->escapeHtml($product->getSku()) ?>"
+                />
+                <input type="hidden"
+                       name="product_name"
+                       value="<?= $block->escapeHtml($product->getName()) ?>"
+                />
+                <input type="hidden" name="hideit" id="hideit" value=""/>
                 <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
                     <span><?= $block->escapeHtml(__('Submit')) ?></span>
                 </button>
             </div>
         </div>
     </form>
+    <?= $block->getChildHtml('question.list') ?>
 </section>

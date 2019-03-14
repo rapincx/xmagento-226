@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="ChaOS_AskQuestion::askquestion"
+             title="Customer Questions"
+             translate="title"
+             module="ChaOS_AskQuestion"
+             parent="Magento_Backend::marketing_user_content"
+             sortOrder="20"
+             action="askquestion/questions/index"
+             resource="ChaOS_AskQuestion::askquestion"/>
+    </menu>
+</config>
