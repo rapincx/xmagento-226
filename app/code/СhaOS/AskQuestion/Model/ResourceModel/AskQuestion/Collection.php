@@ -2,6 +2,7 @@
 
 namespace ChaOS\AskQuestion\Model\ResourceModel\AskQuestion;
 
+use ChaOS\AskQuestion\Model\ResourceModel\AskQuestion;
 use Magento\Framework\Data\Collection\EntityFactoryInterface;
 use Psr\Log\LoggerInterface;
 use Magento\Framework\Data\Collection\Db\FetchStrategyInterface;
@@ -68,7 +69,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     {
         $this->_init(
             \ChaOS\AskQuestion\Model\AskQuestion::class,
-            \ChaOS\AskQuestion\Model\ResourceModel\AskQuestion::class
+            AskQuestion::class
         );
     }
 
@@ -77,7 +78,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      * @return $this
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
-    public function addStoreFilter(int $storeId = 0)
+    public function addStoreFilter($storeId = null): self
     {
         if (!$storeId) {
             $storeId = (int)$this->_storeManager->getStore()->getId();

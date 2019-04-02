@@ -5,5 +5,8 @@
         <route id="ask_question" frontName="ask-question">
             <module name="ChaOS_AskQuestion"/>
         </route>
+        <route id="chaosx" frontName="chaosx">
+            <module name="ChaOS_AskQuestion"/>
+        </route>
     </router>
 </config>

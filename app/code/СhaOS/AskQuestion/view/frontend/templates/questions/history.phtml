@@ -1,0 +1,19 @@
+<?php
+
+/** @var Questions $block */
+
+use ChaOS\AskQuestion\Block\Questions;
+
+$items = $block->getQuestionsHistory()->getItems();
+if (count($items)): ?>
+    <ul>
+        <?php foreach ($items as $item): ?>
+            <li>
+                <strong><?= __('Product name: ') ?> </strong> <span><?= $item->getProductName() ?></span>
+                <strong><?= __('Question text: ') ?> </strong> <span><?= $item->getQuestion() ?></span>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <?= __('There are no questions you have ever asked') ?>
+<?php endif; ?>
