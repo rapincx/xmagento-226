@@ -1,14 +1,16 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="geekhub" translate="label" sortOrder="10">
             <label>GeekHub</label>
         </tab>
-        <section id="chaos_crone_options" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="chaos_cron_options" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
             <class>separator-top</class>
-            <label>Crone Job Management Options</label>
+            <label>Cron Job Management Options</label>
             <tab>geekhub</tab>
-            <resource>ChaOS_AskQuestion::chaos_crone_options</resource>
+            <resource>ChaOS_AskQuestion::chaos_cron_options</resource>
             <group id="general"
                    translate="label"
                    type="text"
@@ -17,7 +19,8 @@
                    showInWebsite="1"
                    showInStore="1">
                 <label>General Configuration</label>
-                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
                     <label>Module Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
                 </field>
@@ -29,11 +32,13 @@
                    showInWebsite="1"
                    showInStore="1">
                 <label>Cron Configuration</label>
-                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
                     <label>Enable auto confirming</label>
                     <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
                 </field>
-                <field id="days" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="days" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
                     <label>Quantity of Days</label>
                 </field>
             </group>
@@ -52,7 +57,7 @@
                        showInWebsite="1"
                        showInStore="1"
                 >
-                    <label>Enable email notification</label>
+                    <label>Enable Email notification</label>
                     <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
                 </field>
                 <field id="admin_email"
@@ -63,7 +68,7 @@
                        showInWebsite="1"
                        showInStore="1"
                 >
-                    <label>Admin email address</label>
+                    <label>Admin Email address</label>
                 </field>
             </group>
             <group id="test"

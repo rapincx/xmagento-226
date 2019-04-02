@@ -1,19 +1,28 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <virtualType name="ChaOS\AskQuestion\Model\ResourceModel\AskQuestion\Grid\CollectionVirtual"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">chaos_ask_question</argument>
             <argument name="resourceModel" xsi:type="string">
-                ChaOS\AskQuestion\Model\ResourceModel\AskQuestion</argument>
+                ChaOS\AskQuestion\Model\ResourceModel\AskQuestion
+            </argument>
         </arguments>
     </virtualType>
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
                 <item name="questions_listing_data_source"
-                      xsi:type="string">ChaOS\AskQuestion\Model\ResourceModel\AskQuestion\Grid\CollectionVirtual</item>
+                      xsi:type="string">ChaOS\AskQuestion\Model\ResourceModel\AskQuestion\Grid\CollectionVirtual
+                </item>
             </argument>
         </arguments>
     </type>
+    <preference for="ChaOS\AskQuestion\Api\Data\AskQuestionSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults"/>
+    <preference for="ChaOS\AskQuestion\Api\Data\AskQuestionInterface"
+                type="ChaOS\AskQuestion\Model\AskQuestion"/>
+    <preference for="ChaOS\AskQuestion\Api\AskQuestionRepositoryInterface"
+                type="ChaOS\AskQuestion\Model\AskQuestionRepository"/>
 </config>

@@ -2,7 +2,9 @@
 
 namespace ChaOS\AskQuestion\Controller\Submit;
 
+use ChaOS\AskQuestion\Api\AskQuestionRepositoryInterface;
 use ChaOS\AskQuestion\Model\AskQuestion;
+use ChaOS\AskQuestion\Model\AskQuestionFactory;
 use Magento\Framework\App\Request\Http;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Exception\LocalizedException;
@@ -13,32 +15,35 @@ use Magento\Framework\Exception\LocalizedException;
  */
 class Index extends \Magento\Framework\App\Action\Action
 {
-    const STATUS_ERROR = 'Error';
-    const STATUS_SUCCESS = 'Success';
+    public const STATUS_ERROR = 'Error';
+    public const STATUS_SUCCESS = 'Success';
     /**
-     * @var \ChaOS\AskQuestion\Model\AskQuestionFactory
+     * @var AskQuestionFactory
      */
     private $askQuestionFactory;
     /**
      * @var \Magento\Framework\Data\Form\FormKey\Validator
      */
     private $formKeyValidator;
+    private $askQuestionRepositoryInterface;
 
     /**
      * Index constructor.
      * @param \Magento\Framework\Data\Form\FormKey\Validator $formKeyValidator
-     * @param \ChaOS\AskQuestion\Model\AskQuestionFactory $askQuestionFactory
+     * @param AskQuestionFactory $askQuestionFactory
      * @param \Magento\Framework\App\Action\Context $context
      */
     public function __construct(
         \Magento\Framework\Data\Form\FormKey\Validator $formKeyValidator,
-        \ChaOS\AskQuestion\Model\AskQuestionFactory $askQuestionFactory,
+        AskQuestionFactory $askQuestionFactory,
+        AskQuestionRepositoryInterface $askQuestionRepoitoryInterface,
         \Magento\Framework\App\Action\Context $context
     )
     {
         parent::__construct($context);
         $this->formKeyValidator = $formKeyValidator;
         $this->askQuestionFactory = $askQuestionFactory;
+        $this->askQuestionRepositoryInterface = $askQuestionRepoitoryInterface;
     }
 
     /**
@@ -69,7 +74,7 @@ class Index extends \Magento\Framework\App\Action\Action
                 ->setProductName($request->getParam('product_name'))
                 ->setSku($request->getParam('sku'))
                 ->setQuestion($request->getParam('question'));
-            $askQuestion->save();
+            $this->askQuestionRepositoryInterface->save($askQuestion);
         } catch (LocalizedException $e) {
             $data = [
                 'status' => self::STATUS_ERROR,

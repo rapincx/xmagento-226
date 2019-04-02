@@ -11,8 +11,8 @@ use Magento\Store\Model\ScopeInterface;
  */
 class Data extends AbstractHelper
 {
-    public const XML_PATH_STANISLAVZ_CRON_ENABLE = 'chaos_crone_options/cron/enable';
-    public const XML_PATH_STANISLAVZ_CRON_DAYS = 'chaos_crone_options/cron/days';
+    public const XML_PATH_CHAOS_CRON_ENABLE = 'ChaOS_cron_options/cron/enable';
+    public const XML_PATH_CHAOS_CRON_DAYS = 'ChaOS_cron_options/cron/days';
 
     /**
      * @param null $storeId
@@ -21,7 +21,7 @@ class Data extends AbstractHelper
     public function getConfigValueEnableCron($storeId = null)
     {
         return $this->scopeConfig->getValue(
-            self::XML_PATH_STANISLAVZ_CRON_ENABLE,
+            self::XML_PATH_CHAOS_CRON_ENABLE,
             ScopeInterface::SCOPE_STORE,
             $storeId
         );
@@ -34,7 +34,7 @@ class Data extends AbstractHelper
     public function getConfigValueDays($storeId = null): int
     {
         return (int)$this->scopeConfig->getValue(
-            self::XML_PATH_STANISLAVZ_CRON_DAYS,
+            self::XML_PATH_CHAOS_CRON_DAYS,
             ScopeInterface::SCOPE_STORE,
             $storeId
         );

@@ -3,6 +3,8 @@
 namespace ChaOS\AskQuestion\Cron;
 
 use ChaOS\AskQuestion\Model\ChangeStatus;
+use ChaOS\AskQuestion\Model\AskQuestion;
+use ChaOS\AskQuestion\Helper\Data;
 
 /**
  * Class QuestionStatus
@@ -14,28 +16,42 @@ class QuestionStatus
      * @var \Psr\Log\LoggerInterface
      */
     private $logger;
+    /**
+     * @var ChangeStatus
+     */
     private $statusModel;
+    /**
+     * @var Data
+     */
+    private $helperData;
 
     /**
-     * Example constructor.
+     * QuestionStatus constructor.
      * @param \Psr\Log\LoggerInterface $logger
+     * @param ChangeStatus $statusModel
+     * @param Data $helperData
      */
     public function __construct(
         \Psr\Log\LoggerInterface $logger,
-        ChangeStatus $statusModel
+        ChangeStatus $statusModel,
+        Data $helperData
     )
     {
         $this->logger = $logger;
         $this->statusModel = $statusModel;
+        $this->helperData = $helperData;
     }
 
     /**
      * This will change status of questions
      */
-    public function execute()
+    public function execute(): void
     {
+        if (!$this->checkEnabled()) {
+            return;
+        }
         $this->statusModel->changeQuestionStatus(
-            \ChaOS\AskQuestion\Model\AskQuestion::STATUS_ANSWERED,
+            AskQuestion::STATUS_ANSWERED,
             $this->getDays()
         );
         $this->logger->info('Cron Works');
@@ -46,6 +62,14 @@ class QuestionStatus
      */
     private function getDays(): int
     {
-        return 3;
+        return $this->helperData->getConfigValueDays();
+    }
+
+    /**
+     * @return bool|int
+     */
+    private function checkEnabled()
+    {
+        return $this->helperData->getConfigValueEnableCron();
     }
 }

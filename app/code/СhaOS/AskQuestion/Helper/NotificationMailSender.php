@@ -18,10 +18,10 @@ use Magento\Store\Model\ScopeInterface;
  */
 class NotificationMailSender extends AbstractHelper
 {
-    public const XML_PATH_STANISLAVZ_CRON_ENABLE = 'chaos_crone_options/cron/enable';
-    public const XML_PATH_STANISLAVZ_CRON_DAYS = 'chaos_crone_options/cron/days';
-    public const XML_PATH_STANISLAVZ_EMAIL_ENABLE = 'chaos_crone_options/email/enable';
-    public const XML_PATH_STANISLAVZ_EMAIL_ADMIN_EMAIL = 'chaos_crone_options/email/admin_email';
+    public const XML_PATH_CHAOS_CRON_ENABLE = 'chaos_crone_options/cron/enable';
+    public const XML_PATH_CHAOS_CRON_DAYS = 'chaos_crone_options/cron/days';
+    public const XML_PATH_CHAOS_EMAIL_ENABLE = 'chaos_crone_options/email/enable';
+    public const XML_PATH_CHAOS_EMAIL_ADMIN_EMAIL = 'chaos_crone_options/email/admin_email';
     public const GENERAL_STORE_CONTACT_EMAIL = 'trans_email/ident_general/email';
     public const GENERAL_STORE_CONTACT_NAME = 'trans_email/ident_general/name';
     /** @var ScopeConfigInterface */
@@ -104,7 +104,7 @@ class NotificationMailSender extends AbstractHelper
     public function getConfigValueEnableCron($storeId = null)
     {
         return $this->scopeConfig->getValue(
-            self::XML_PATH_STANISLAVZ_CRON_ENABLE,
+            self::XML_PATH_CHAOS_CRON_ENABLE,
             ScopeInterface::SCOPE_STORE,
             $storeId
         );
@@ -117,7 +117,7 @@ class NotificationMailSender extends AbstractHelper
     public function getConfigValueDays($storeId = null): int
     {
         return (int)$this->scopeConfig->getValue(
-            self::XML_PATH_STANISLAVZ_CRON_DAYS,
+            self::XML_PATH_CHAOS_CRON_DAYS,
             ScopeInterface::SCOPE_STORE,
             $storeId
         );
@@ -130,7 +130,7 @@ class NotificationMailSender extends AbstractHelper
     public function getAdminEmailEnableNotification($storeId = null): int
     {
         return (int)$this->scopeConfig->getValue(
-            self::XML_PATH_STANISLAVZ_EMAIL_ENABLE,
+            self::XML_PATH_CHAOS_EMAIL_ENABLE,
             ScopeInterface::SCOPE_STORE,
             $storeId
         );
@@ -143,7 +143,7 @@ class NotificationMailSender extends AbstractHelper
     public function getAdminEmailAddress($storeId = null): string
     {
         return $this->scopeConfig->getValue(
-            self::XML_PATH_STANISLAVZ_EMAIL_ADMIN_EMAIL,
+            self::XML_PATH_CHAOS_EMAIL_ADMIN_EMAIL,
             ScopeInterface::SCOPE_STORE,
             $storeId
         );

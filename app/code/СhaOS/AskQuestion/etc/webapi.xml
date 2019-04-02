@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/askQuestion/:askQuestionId" method="GET">
+        <service class="ChaOS\AskQuestion\Api\AskQuestionRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="ChaOS_AskQuestion::askquestion"/>
+        </resources>
+    </route>
+    <route url="/V1/askQuestion/search" method="GET">
+        <service class="ChaOS\AskQuestion\Api\AskQuestionRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="ChaOS_AskQuestion::askquestion"/>
+        </resources>
+    </route>
+    <route url="/V1/askQuestion" method="POST">
+        <service class="ChaOS\AskQuestion\Api\AskQuestionRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="ChaOS_AskQuestion::askquestion"/>
+        </resources>
+    </route>
+    <route url="/V1/askQuestion/:id" method="PUT">
+        <service class="ChaOS\AskQuestion\Api\AskQuestionRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="ChaOS_AskQuestion::askquestion"/>
+        </resources>
+    </route>
+    <route url="/V1/askQuestion/:askQuestionId" method="DELETE">
+        <service class="ChaOS\AskQuestion\Api\AskQuestionRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="ChaOS_AskQuestion::askquestion"/>
+        </resources>
+    </route>
+</routes>
